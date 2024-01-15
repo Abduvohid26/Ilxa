@@ -71,10 +71,3 @@ class Cart(BaseModel):
     quantity = models.PositiveIntegerField(default=1, null=True, blank=True)
     def __str__(self):
         return f" cart-> {self.product.title} by {self.user} qty -> {str(self.quantity)}"
-
-
-
-
-
-
-

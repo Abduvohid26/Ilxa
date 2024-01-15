@@ -8,8 +8,8 @@ from shared.uitilty import phone_regex
 class User(AbstractUser, BaseModel):
     username = models.CharField(max_length=255, unique=True)
     phone = models.CharField(max_length=13, unique=True, blank=False, null=False, validators=[phone_regex])
-    password = models.CharField(max_length=25)
-    password_confirmation = models.CharField(max_length=25)
+    password = models.CharField(max_length=128)
+    password_confirmation = models.CharField(max_length=128)
     def __str__(self):
         return self.username
 

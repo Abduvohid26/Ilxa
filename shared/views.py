@@ -35,6 +35,7 @@ def verify_sms_code_api(request):
 
     if sms_verification.code == sms_code:
         sms_verification.is_verified = True
+        print(sms_code)
         sms_verification.save()
         return Response({'detail': 'SMS code has been verified successfully.'}, status=status.HTTP_200_OK)
     else:
